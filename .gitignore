@@ -1,0 +1,6 @@
+# PhpStorm
+/.idea/
+
+# Composer vendors directory
+/vendor/
+composer.lock

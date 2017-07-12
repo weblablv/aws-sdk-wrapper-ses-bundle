@@ -1,0 +1,8 @@
+services:
+    weblab.amazon_sdk_ses_wrapper.ses_client_email_sender:
+        class: Weblab\AmazonSdkSesWrapper\Service\SesClientEmailSender
+        arguments:
+            - '%weblab_amazon_sdk_ses_wrapper.profile%'
+            - '%weblab_amazon_sdk_ses_wrapper.credentials.access_key_id%'
+            - '%weblab_amazon_sdk_ses_wrapper.credentials.access_secret_key%'
+            - '%weblab_amazon_sdk_ses_wrapper.region%'
