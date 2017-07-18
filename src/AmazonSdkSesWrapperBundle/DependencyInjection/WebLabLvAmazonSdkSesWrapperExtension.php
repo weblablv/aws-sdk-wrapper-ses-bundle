@@ -1,6 +1,6 @@
 <?php
 
-namespace Weblab\Bundle\AmazonSdkSesWrapperBundle\DependencyInjection;
+namespace WebLabLv\Bundle\AmazonSdkSesWrapperBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
@@ -9,7 +9,7 @@ use Symfony\Component\Config\FileLocator;
 
 use InvalidArgumentException;
 
-final class WeblabAmazonSdkSesWrapperExtension extends Extension
+final class WebLabLvAmazonSdkSesWrapperExtension extends Extension
 {
 	/**
 	 * @param array $configs An array of configuration values
@@ -21,21 +21,21 @@ final class WeblabAmazonSdkSesWrapperExtension extends Extension
 	{
 		$configuration = new Configuration($this->getAlias());
 		$config = $this->processConfiguration($configuration, $configs);
-		
-		$container->setParameter('weblab_amazon_sdk_ses_wrapper.profile', (string)$config['profile']);
-		$container->setParameter('weblab_amazon_sdk_ses_wrapper.credentials.access_key_id', (string)$config['credentials']['access_key_id']);
-		$container->setParameter('weblab_amazon_sdk_ses_wrapper.credentials.access_secret_key', (string)$config['credentials']['access_secret_key']);
-		$container->setParameter('weblab_amazon_sdk_ses_wrapper.region', (string)$config['region']);
-		
+
+		$container->setParameter('weblablv_amazon_sdk_ses_wrapper.profile', (string)$config['profile']);
+		$container->setParameter('weblablv_amazon_sdk_ses_wrapper.credentials.access_key_id', (string)$config['credentials']['access_key_id']);
+		$container->setParameter('weblablv_amazon_sdk_ses_wrapper.credentials.access_secret_key', (string)$config['credentials']['access_secret_key']);
+		$container->setParameter('weblablv_amazon_sdk_ses_wrapper.region', (string)$config['region']);
+
 		$loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
 		$loader->load('services.yml');
 	}
-	
+
 	/**
 	 * @return string
 	 */
 	public function getAlias(): string
 	{
-		return 'weblab_amazon_sdk_ses_wrapper';
+		return 'weblablv_amazon_sdk_ses_wrapper';
 	}
 }

@@ -4,7 +4,7 @@
     "type": "symfony-bundle",
     "autoload": {
         "psr-4": {
-            "Weblab\\Bundle\\": "src/"
+            "WebLabLv\\Bundle\\": "src/"
         }
     },
     "authors": [
