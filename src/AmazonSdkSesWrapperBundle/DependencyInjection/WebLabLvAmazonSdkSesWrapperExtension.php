@@ -11,31 +11,31 @@ use InvalidArgumentException;
 
 final class WebLabLvAmazonSdkSesWrapperExtension extends Extension
 {
-	/**
-	 * @param array $configs An array of configuration values
-	 * @param ContainerBuilder $container A ContainerBuilder instance
-	 *
-	 * @throws InvalidArgumentException When provided tag is not defined in this extension
-	 */
-	public function load(array $configs, ContainerBuilder $container)
-	{
-		$configuration = new Configuration($this->getAlias());
-		$config = $this->processConfiguration($configuration, $configs);
+    /**
+     * @param array $configs An array of configuration values
+     * @param ContainerBuilder $container A ContainerBuilder instance
+     *
+     * @throws InvalidArgumentException When provided tag is not defined in this extension
+     */
+    public function load(array $configs, ContainerBuilder $container)
+    {
+        $configuration = new Configuration($this->getAlias());
+        $config        = $this->processConfiguration($configuration, $configs);
 
-		$container->setParameter('weblablv_amazon_sdk_ses_wrapper.profile', (string)$config['profile']);
-		$container->setParameter('weblablv_amazon_sdk_ses_wrapper.credentials.access_key_id', (string)$config['credentials']['access_key_id']);
-		$container->setParameter('weblablv_amazon_sdk_ses_wrapper.credentials.access_secret_key', (string)$config['credentials']['access_secret_key']);
-		$container->setParameter('weblablv_amazon_sdk_ses_wrapper.region', (string)$config['region']);
+        $container->setParameter('weblablv.amazon_ses_client.profile',                  $config['profile']                  ?? null);
+        $container->setParameter('weblablv.amazon_ses_client.region',                   $config['region']                   ?? null);
+        $container->setParameter('weblablv.amazon_ses_client.path_to_credentials_file', $config['path_to_credentials_file'] ?? null);
+        $container->setParameter('weblablv.amazon_ses_client.version',                  $config['version']                  ?? null);
 
-		$loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
-		$loader->load('services.yml');
-	}
+        $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader->load('services.yml');
+    }
 
-	/**
-	 * @return string
-	 */
-	public function getAlias(): string
-	{
-		return 'weblablv_amazon_sdk_ses_wrapper';
-	}
+    /**
+     * @return string
+     */
+    public function getAlias(): string
+    {
+        return 'weblablv_amazon_ses_client';
+    }
 }

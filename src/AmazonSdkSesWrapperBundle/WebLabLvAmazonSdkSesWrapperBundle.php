@@ -9,11 +9,11 @@ use WebLabLv\Bundle\AmazonSdkSesWrapperBundle\DependencyInjection\WebLabLvAmazon
 
 final class WebLabLvAmazonSdkSesWrapperBundle extends Bundle
 {
-	/**
-	 * @return Extension
-	 */
-	public function getContainerExtension(): Extension
-	{
-		return new WebLabLvAmazonSdkSesWrapperExtension();
-	}
+    /**
+     * @return Extension
+     */
+    public function getContainerExtension(): Extension
+    {
+        return new WebLabLvAmazonSdkSesWrapperExtension();
+    }
 }
