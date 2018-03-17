@@ -1,6 +1,7 @@
 {
     "name": "weblablv/aws-sdk-wrapper-ses-bundle",
-    "description": "",
+    "description": "Weblablv amazon ses client wrapper bundle",
+    "license": "MIT",
     "type": "symfony-bundle",
     "autoload": {
         "psr-4": {
