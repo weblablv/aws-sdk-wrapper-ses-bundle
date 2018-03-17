@@ -17,6 +17,6 @@
     "require": {
         "php": "^7.0",
         "symfony/symfony": "3.0 - 4.0",
-        "weblablv/aws-sdk-wrapper-ses": "^2.0"
+        "weblablv/aws-sdk-wrapper-ses": "^2.1"
     }
 }

@@ -1,8 +1,10 @@
 services:
     weblablv.amazon_ses_client.ses_client_email_sender:
         class: WebLabLv\Bundle\AmazonSdkSesWrapperBundle\Service\SesClientSenderService
+        arguments:
+            - '%weblablv.amazon_ses_client.credentials.key_id%'
+            - '%weblablv.amazon_ses_client.credentials.secret%'
         calls:
-            - [ setProfile,         ['%weblablv.amazon_ses_client.profile%'                 ]]
-            - [ setRegion,          ['%weblablv.amazon_ses_client.region%'                  ]]
-            - [ setCredentialsPath, ['%weblablv.amazon_ses_client.path_to_credentials_file%']]
-            - [ setVersion,         ['%weblablv.amazon_ses_client.version%'                 ]]
+            - [ setProfile, ['%weblablv.amazon_ses_client.profile%' ]]
+            - [ setRegion,  ['%weblablv.amazon_ses_client.region%'  ]]
+            - [ setVersion, ['%weblablv.amazon_ses_client.version%' ]]

@@ -17,16 +17,6 @@ final class SesClientSenderService extends SesClientSender
     }
 
     /**
-     * @param string|null $credentialsPath
-     * @return SesClientSender
-     */
-    public function setCredentialsPath(string $credentialsPath = null): SesClientSender
-    {
-        false === empty($credentialsPath) && parent::setCredentialsPath($credentialsPath);
-        return $this;
-    }
-
-    /**
      * @param string|null $version
      * @return SesClientSender
      */

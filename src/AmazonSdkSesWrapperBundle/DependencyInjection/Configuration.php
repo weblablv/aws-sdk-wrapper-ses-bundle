@@ -31,9 +31,10 @@ final class Configuration implements ConfigurationInterface
 
         $root
             ->children()
+                ->scalarNode('credentials_key_id')->isRequired()->end()
+                ->scalarNode('credentials_secret')->isRequired()->end()
                 ->scalarNode('profile')->end()
                 ->scalarNode('region')->end()
-                ->scalarNode('path_to_credentials_file')->end()
                 ->scalarNode('version')->end()
             ->end();
 
